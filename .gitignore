@@ -1,0 +1,16 @@
+/.metadata/
+*.prefs
+PreferredCustomers/.project
+PreferredCustomers/.classpath
+Lists/.project
+Lists/.classpath
+Employees/.classpath
+Employees/.project
+ComplexNumbers/.project
+ComplexNumbers/.classpath
+Queues/.classpath
+Queues/.project
+RationalNumbers/.classpath
+RationalNumbers/.project
+Stacks/.classpath
+Stacks/.project
