@@ -46,12 +46,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			if(currentNode.data.compareTo(item) <= 0)
 			{
 				trailCurrentNode = currentNode;
-				currentNode = currentNode.leftChild;
+				currentNode = currentNode.rightChild;
 			}
 			else
 			{
 				trailCurrentNode = currentNode;
-				currentNode = currentNode.rightChild;
+				currentNode = currentNode.leftChild;
 			}
 		}
 		if(trailCurrentNode.data.compareTo(item) <= 0)
@@ -243,7 +243,55 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			}
 		}
 		
-		
+		if(currentNode == null)
+		{
+			System.out.println(item + " not found");
+			return;
+		}
+		if(found && currentNode.leftChild == null && currentNode.rightChild == null)
+		{
+			if(trailCurrentNode.data.compareTo(item) < 0)
+			{
+				trailCurrentNode.rightChild = null;
+			}
+			else if(trailCurrentNode.data.compareTo(item) > 0)
+			{
+				trailCurrentNode.leftChild = null;
+			}
+			return;
+		}
+		if(trailCurrentNode.data.compareTo(item) > 0)
+		{
+			if(currentNode.leftChild == null && currentNode.rightChild != null)
+			{
+				trailCurrentNode.leftChild = currentNode.rightChild;
+			}
+			else if(currentNode.leftChild != null && currentNode.rightChild == null)
+			{
+				trailCurrentNode.leftChild = currentNode.leftChild;
+			}
+			else if(currentNode.leftChild != null && currentNode.rightChild != null)
+			{
+				
+			}
+			return;
+		}
+		if(trailCurrentNode.data.compareTo(item) < 0)
+		{
+			if(currentNode.leftChild == null && currentNode.rightChild != null)
+			{
+				trailCurrentNode.rightChild = currentNode.rightChild;
+			}
+			else if(currentNode.leftChild != null && currentNode.rightChild == null)
+			{
+				trailCurrentNode.rightChild = currentNode.leftChild;
+			}
+			else if(currentNode.leftChild != null && currentNode.rightChild != null)
+			{
+				
+			}
+			return;
+		}
 		
 		return;
 	}
